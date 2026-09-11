@@ -1,19 +1,201 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:background="#FFFFFF"
+    android:fillViewport="true">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="vertical"
+        android:padding="16dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/tvMesero"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <!-- ========================= -->
+        <!-- DATOS DE LA MESA           -->
+        <!-- ========================= -->
+
+        <EditText
+            android:id="@+id/etMesaId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="ID de la mesa (ej. mesa_14)"
+            android:inputType="text"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/etComensales"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Comensales"
+            android:inputType="number"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/btnAbrirMesa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Abrir mesa"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#D32F2F" />
+
+        <!-- Separador -->
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginBottom="10dp"
+            android:background="#DDDDDD" />
+
+        <!-- ========================= -->
+        <!-- ARTÍCULO                   -->
+        <!-- ========================= -->
+
+        <EditText
+            android:id="@+id/etPlatillo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Platillo"
+            android:inputType="text"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/etCantidad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Cantidad"
+            android:inputType="number"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/etPrecio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Precio unitario"
+            android:inputType="numberDecimal"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/etNotas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Notas"
+            android:inputType="text"
+            android:textSize="14sp" />
+
+        <!-- Spinner -->
+
+        <Spinner
+            android:id="@+id/spPlatillo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp" />
+
+        <Button
+            android:id="@+id/btnAgregarArticulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="Agregar artículo"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#2E7D32" />
+
+        <!-- ========================= -->
+        <!-- TOTAL                      -->
+        <!-- ========================= -->
+
+        <TextView
+            android:id="@+id/tvTotalParcial"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="Total parcial: $0.00"
+            android:textColor="#222222"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <!-- ========================= -->
+        <!-- CUENTA                     -->
+        <!-- ========================= -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Cuenta impresa"
+                android:textColor="#333333"
+                android:textSize="12sp" />
+
+            <Switch
+                android:id="@+id/swCuenta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <!-- ========================= -->
+        <!-- GUARDAR MESA               -->
+        <!-- ========================= -->
+
+        <Button
+            android:id="@+id/btnGuardarMesa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Guardar mesa"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#B00000" />
+
+        <!-- Separador -->
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginBottom="10dp"
+            android:background="#DDDDDD" />
+
+        <!-- ========================= -->
+        <!-- MESAS GUARDADAS             -->
+        <!-- ========================= -->
+
+        <TextView
+            android:id="@+id/tvMesasGuardadas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mesas guardadas"
+            android:textColor="#222222"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <!-- Aquí posteriormente puedes colocar
+             las mesas guardadas dinámicamente -->
+
+        <LinearLayout
+            android:id="@+id/contenedorMesas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical" />
+
+    </LinearLayout>
+
+</ScrollView>

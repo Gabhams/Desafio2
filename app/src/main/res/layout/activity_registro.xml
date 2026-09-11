@@ -29,6 +29,13 @@
             android:layout_height="match_parent"/>
     </com.google.android.material.textfield.TextInputLayout>
     <Button
+        android:layout_width="match_parent"
+        android:id="@+id/btnOtros"
+        android:layout_margin="20dp"
+        android:text="Otros metodos"
+        android:layout_height="wrap_content"/>
+
+    <Button
         android:id="@+id/btnRegistrar"
         android:layout_width="match_parent"
         android:layout_margin="20dp"

@@ -27,6 +27,7 @@ class InicioSesion : AppCompatActivity() {
         binding.btnIniciar.setOnClickListener {
             inciarSesion()
         }
+
     }
 
     fun inciarSesion() {

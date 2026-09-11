@@ -28,6 +28,10 @@ class Registro : AppCompatActivity() {
             registrarse()
         }
 
+        binding.btnOtros.setOnClickListener {
+            otrosMetodos()
+        }
+
     }
 
     fun registrarse() {
@@ -44,5 +48,11 @@ class Registro : AppCompatActivity() {
             }.addOnFailureListener { task ->
                 Toast.makeText(applicationContext, task.localizedMessage, Toast.LENGTH_SHORT).show()
             }
+    }
+
+    private fun otrosMetodos() {
+        val metodos = Intent(this, MetodosAutenticacion::class.java)
+
+        startActivity(metodos)
     }
 }
